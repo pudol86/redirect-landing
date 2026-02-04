@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Landing</title>
+</head>
+<body>
+
+<h1>landing-redirect</h1>
+
+<script>
+(function () {
+
+  // Jangan redirect kalau dibuka langsung
+  if (window.self === window.top) return;
+
+  // Delay aman untuk iframe traffic
+  setTimeout(function () {
+    try {
+      window.top.location.replace("https://www.effectivegatecpm.com/kzsdd120b5?key=2984ea094e1bd761793436002aca6aec");
+    } catch (e) {
+      window.location.href = "https://www.effectivegatecpm.com/kzsdd120b5?key=2984ea094e1bd761793436002aca6aec";
+    }
+  }, 5000);
+
+})();
+</script>
+
+</body>
+</html>
